@@ -1,0 +1,23 @@
+#!/bin/sh -e
+
+#Get version string
+version=$(echo "$2" | awk '{print $1}')
+
+echo "Creating kernel config..."
+make defconfig
+
+echo "Compiling..."
+make -j "$(nproc)"
+
+echo "Installing modules..."
+make INSTALL_MOD_PATH="$1/usr" modules_install
+
+echo "Creating /boot directory..."
+mkdir "$1/boot"
+
+echo "Installing kernel..."
+make INSTALL_PATH="$1/boot" install
+
+echo "Renaming kernel..."
+mv "$1/boot/vmlinuz" "$1/boot/vmlinuz-$version"
+mv "$1/boot/System.map" "$1/boot/System.map-$version"
