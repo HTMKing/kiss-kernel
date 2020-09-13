@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+#Get version string
+version=$(echo "$2" | awk '{print $1}')
+
+echo "Unpacking sources..."
+mkdir -p $1/usr/src
+
+tar xf linux-$version.tar.xz?no-extract
+mv linux-$version $1/usr/src/linux-$version
