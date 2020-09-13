@@ -13,7 +13,7 @@ echo "Installing modules..."
 make INSTALL_MOD_PATH="$1/usr" modules_install
 
 echo "Creating /boot directory..."
-mkdir "$1/boot"
+mkdir -p "$1/boot"
 
 echo "Installing kernel..."
 make INSTALL_PATH="$1/boot" install
