@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+echo "INFO:"
+echo "You have to extract the source tar file yourself."
+echo "The tar file is in /usr/src"
+echo "If you wish to remove the kernel sources, you must remove the source directory.  The tar file will be automatically removed."
