@@ -16,5 +16,7 @@ With both sources and binary the source is compiled.  The binaries are not preco
 
 ## Kernels available
 
-- linux-source (currently 5.8.10)
+- linux-sources (currently 5.8.10)
 - linux-bin (currently 5.8.10)
+- linux-libre-sources (currently 5.8.10)
+- linux-libre-bin (currently 5.8.10)
