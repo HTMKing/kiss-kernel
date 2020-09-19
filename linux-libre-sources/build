@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+#Get version string
+version=$(echo "$2" | awk '{print $1}')
+
+echo "Moving sources..."
+mkdir -p $1/usr/src
+
+tar xf linux-libre-$version-gnu.tar.xz?no-extract
+mv linux-libre-$version-gnu.tar.xz?no-extract $1/usr/src/linux-libre-$version-gnu.tar.xz
